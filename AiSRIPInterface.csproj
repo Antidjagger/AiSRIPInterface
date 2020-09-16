@@ -70,9 +70,6 @@
     <Compile Include="UserList.xaml.cs">
       <DependentUpon>UserList.xaml</DependentUpon>
     </Compile>
-    <Compile Include="UserOfCompany.xaml.cs">
-      <DependentUpon>UserOfCompany.xaml</DependentUpon>
-    </Compile>
     <Compile Include="Users.cs" />
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
@@ -88,10 +85,6 @@
       <SubType>Code</SubType>
     </Compile>
     <Page Include="UserList.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="UserOfCompany.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
