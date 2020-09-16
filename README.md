@@ -24,7 +24,7 @@ test project for Avicom
 
 Romashka & Partners (R&P) has decided to convert its customer base to electronic format. R&P's clients are other companies that have a contract with each Of them. Client companies have users, which Rip serves. It is necessary to develop a desktop WPF application that will help the company achieve this goal.
 
-###Technical requirements for the system:
+### h3 Technical requirements for the system:
 
     Application: WPF/MVVM
     Database: MSSQL
