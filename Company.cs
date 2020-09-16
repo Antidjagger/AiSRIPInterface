@@ -12,12 +12,14 @@ namespace AiSRIPInterface
         [Key]
         public int ID { get; set; }
         public string Name { get; set; }
-
-        public string Status { get; set; }
+        //public int UsersCount { get; set; }
+        public string CStatus { get; set; }
         public ICollection<Users> Users { get; set; }
         public Company()
         {
             Users = new List<Users>();
+            //UsersCount = Users.Count;
+
         }
     }
 }
