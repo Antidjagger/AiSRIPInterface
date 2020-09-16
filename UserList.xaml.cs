@@ -35,18 +35,43 @@ namespace AiSRIPInterface
             UsersGrid.ItemsSource = DB.Users.Local.ToBindingList();
             comboBoxColum.ItemsSource = DB.Companies.Local;
 
+            this.Closing += UserList_Closing;
         }
+
+        private void UserList_Closing(object sender, System.ComponentModel.CancelEventArgs e)
+        {
+            DB.SaveChanges();
+        }
+
+
+
         //for user of selected company
         public UserList(int CompanyId)
         {
+            
             InitializeComponent();
+            UsersGrid.CanUserAddRows = false;
             CompanyId_ = CompanyId;
             DB = new AiSContext();
             // загружаем данные (вспомогательная таблица списка статусов заказов)
             DB.Users.Load();
             DB.Companies.Load();
-            UsersGrid.ItemsSource = DB.Users.Local.Where(u => u.CompanyId == CompanyId).ToList();
+            UsersGrid.ItemsSource = DB.Users.Local.Where(u => u.CompaniesID == CompanyId).ToList();
             comboBoxColum.ItemsSource = DB.Companies.Local;
+        }
+
+        private void addNewUserButton_Users_Click(object sender, RoutedEventArgs e)
+        {
+            Users user = new Users();
+            user.Login = "Введите логин";
+            user.Name = "Введите имя";
+            user.Password = "Введите пароль";
+            user.CompaniesID = CompanyId_;
+            //user.Companies = (Companies)DB.Companies.Local.Where(c => c.CompaniesID == CompanyId_);
+            DB.Users.Add(user);
+            DB.SaveChanges();
+            DB.Users.Load();
+            UsersGrid.ItemsSource = DB.Users.Local.Where(u => u.CompaniesID == CompanyId_).ToList();
         }
 
         private void updateButton_Users_Click(object sender, RoutedEventArgs e)
@@ -75,7 +100,7 @@ namespace AiSRIPInterface
             DB.Users.Load();
             if (CompanyId_ > -1)
             {
-                UsersGrid.ItemsSource = DB.Users.Local.Where(u => u.CompanyId == CompanyId_).ToList();
+                UsersGrid.ItemsSource = DB.Users.Local.Where(u => u.CompaniesID == CompanyId_).ToList();
             }
         }
     }

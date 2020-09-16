@@ -18,12 +18,12 @@ namespace AiSRIPInterface
         {
             Database.SetInitializer<AiSContext>(null);
             base.OnModelCreating(modelBuilder);
-            modelBuilder.Conventions.Remove<PluralizingTableNameConvention>();
+            //modelBuilder.Conventions.Remove<PluralizingTableNameConvention>();
         }
-        public DbSet<Company> Companies { get; set; }
+        public DbSet<Companies> Companies { get; set; }
         public DbSet<Users> Users { get; set; }
 
-        public DbSet<StatusType> StatusTypes { get; set; }
+        public DbSet<StatusTypes> StatusTypes { get; set; }
         public DbSet<Testу> Testуs { get; set; }
     }
 }

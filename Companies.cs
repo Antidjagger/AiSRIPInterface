@@ -7,15 +7,15 @@ using System.ComponentModel.DataAnnotations;
 
 namespace AiSRIPInterface
 {
-    class Company
+    class Companies
     {
         [Key]
-        public int ID { get; set; }
+        public int CompaniesID { get; set; }
         public string Name { get; set; }
-        //public int UsersCount { get; set; }
-        public string CStatus { get; set; }
+        public int? StatusID { get; set; }
+        public StatusTypes StatusTypes { get; set; }
         public ICollection<Users> Users { get; set; }
-        public Company()
+        public Companies()
         {
             Users = new List<Users>();
             //UsersCount = Users.Count;

@@ -65,7 +65,7 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
-    <Compile Include="StatusType.cs" />
+    <Compile Include="StatusTypes.cs" />
     <Compile Include="Testу.cs" />
     <Compile Include="UserList.xaml.cs">
       <DependentUpon>UserList.xaml</DependentUpon>
@@ -79,7 +79,7 @@
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="Company.cs" />
+    <Compile Include="Companies.cs" />
     <Compile Include="MainWindow.xaml.cs">
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>

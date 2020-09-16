@@ -13,8 +13,8 @@ namespace AiSRIPInterface
         public string Name { get; set; }
         public string Login { get; set; }
         public string Password { get; set; }
-        public int? CompanyId { get; set; }
-        public Company Company { get; set; }
+        public int? CompaniesID { get; set; }
+        public Companies Companies { get; set; }
 
 
     }

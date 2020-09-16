@@ -7,15 +7,15 @@ using System.Threading.Tasks;
 
 namespace AiSRIPInterface
 {
-    class StatusType
+    class StatusTypes
     {
         [Key]
-        public int ID { get; set; }
+        public int StatusID { get; set; }
         public string Status { get; set; }
-        //public ICollection<Company> Companies { get; set; }
-        //public StatusType()
-        //{
-        //    Companies = new List<Company>();
-        //}
+        public ICollection<Companies> Companies { get; set; }
+        public StatusTypes()
+        {
+            Companies = new List<Companies>();
+        }
     }
 }

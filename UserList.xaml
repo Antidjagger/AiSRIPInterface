@@ -5,25 +5,26 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:AiSRIPInterface"
         mc:Ignorable="d"
-        Title="UserList" Height="450" Width="800">
-    <Grid>
-        <DataGrid x:Name="UsersGrid" AutoGenerateColumns="False" HorizontalAlignment="Left" Height="322" Margin="23,29,0,0" VerticalAlignment="Top" Width="740">
+        Title="Список пользователей" Height="450" Width="626.75">
+    <Grid Margin="0,0,21,0">
+        <DataGrid x:Name="UsersGrid" AutoGenerateColumns="False" HorizontalAlignment="Left" Height="322" Margin="23,29,0,0" VerticalAlignment="Top" Width="504">
             <DataGrid.Columns>
                 <DataGridTextColumn Binding="{Binding Name}" Header="Имя" Width="120"/>
-                <DataGridTextColumn Binding="{Binding Login}" Header="Логин" Width="80"/>
+                <DataGridTextColumn Binding="{Binding Login}" Header="Логин" Width="120"/>
                 <DataGridTextColumn Binding="{Binding Password}" Header="Пароль" Width="80"/>
                 <DataGridComboBoxColumn Header="Компания" 
                                         DisplayMemberPath ="Name"     
-                                        SelectedItemBinding="{Binding Path=Company}"
+                                        SelectedItemBinding="{Binding Path=Companies}"
                                         x:Name="comboBoxColum"
                                         Width="120">
                 </DataGridComboBoxColumn>
             </DataGrid.Columns>
         </DataGrid>
         <StackPanel HorizontalAlignment="Left" Height="70" Margin="23,349,0,0" VerticalAlignment="Top" Width="288" MinWidth="100" MinHeight="70">
-            <Button x:Name="updateButton_Users" Content="Обновить" Click="updateButton_Users_Click" Margin="0,10" />
+            <Button x:Name="updateButton_Users" Content="Сохранить и обновить" Click="updateButton_Users_Click" Margin="0,10" />
             <Button x:Name="deleteButton_Users" Content="Удалить пользователя" Click="deleteButton_Users_Click" Margin="0,0,0,10" />
         </StackPanel>
+        <Button x:Name="addNewUserButton_Users" Click="addNewUserButton_Users_Click" Content="Добавить нового пользователя" HorizontalAlignment="Left" Margin="329,359,0,0" VerticalAlignment="Top" Width="198"/>
 
     </Grid>
 </Window>
